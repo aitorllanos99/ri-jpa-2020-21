@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri-jpa-2020-21\.metadata\.plugins\org.eclipse.jdt.core
+4207981046.index
+1733125466.index
+1174630048.index
+2987704252.index

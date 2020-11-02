@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="alb.util.assertion.ArgumentChecks"/>
+    <fullyQualifiedTypeName name="alb.util.math.Round"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.TimeZone"/>
+    <fullyQualifiedTypeName name="java.time.ZoneId"/>
+    <fullyQualifiedTypeName name="java.time.Instant"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="alb.util.assertion.StateChecks"/>
+    <fullyQualifiedTypeName name="uo.ri.cws.domain.Invoice.InvoiceStatus"/>
+    <fullyQualifiedTypeName name="uo.ri.cws.domain.WorkOrder.WorkOrderStatus"/>
+</qualifiedTypeNameHistroy>

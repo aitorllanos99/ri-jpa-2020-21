@@ -1,0 +1,44 @@
+package uo.ri.cws.domain;
+
+import alb.util.assertion.ArgumentChecks;
+
+public class Client {
+	private String dni;
+	private String name;
+	private String surname;
+	private String email;
+	private String phone;
+	private Address address;
+
+	public Client(String dni) {
+		super();
+		ArgumentChecks.isNotEmpty(dni);
+		ArgumentChecks.isNotNull(dni);
+		this.dni = dni;
+	}
+
+	public Client(String dni, String name, String surname) {
+		this(dni);
+		ArgumentChecks.isNotEmpty(name);
+		ArgumentChecks.isNotEmpty(surname);
+		ArgumentChecks.isNotNull(name);
+		ArgumentChecks.isNotNull(surname);
+		this.name = name;
+		this.surname = surname;
+	}
+
+	public Client(String dni, String name, String surname, String email, String phone) {
+		this(dni);
+		ArgumentChecks.isNotEmpty(dni);
+		
+	
+		ArgumentChecks.isNotEmpty(email);
+		ArgumentChecks.isNotEmpty(phone);
+		ArgumentChecks.isNotNull(dni);
+		ArgumentChecks.isNotNull(dni);
+		
+		ArgumentChecks.isNotNull(email);
+		ArgumentChecks.isNotNull(phone);
+	}
+
+}
