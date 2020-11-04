@@ -1,0 +1,60 @@
+package uo.ri.cws.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import alb.util.assertion.ArgumentChecks;
+import uo.ri.cws.domain.base.BaseEntity;
+@Entity
+@Table(name = "TSUBSTITUTIONS")
+public class Substitution extends BaseEntity{
+	// natural attributes
+	private int quantity;
+
+	// accidental attributes
+	@ManyToOne private SparePart sparePart;
+	@ManyToOne private Intervention intervention;
+
+	Substitution() {
+	}
+
+	public Substitution(SparePart sparePart, Intervention intervention) {
+		ArgumentChecks.isNotNull(sparePart);
+		ArgumentChecks.isNotNull(intervention);
+		this.sparePart = sparePart;
+		this.intervention = intervention;
+		Associations.Sustitute.link(sparePart, this, intervention);
+	}
+
+	public Substitution(SparePart sparePart, Intervention intervention, int quantity) {
+		this(sparePart, intervention);
+		ArgumentChecks.isTrue(quantity > 0);
+		this.quantity = quantity;
+	}
+
+	void _setSparePart(SparePart sparePart) {
+		this.sparePart = sparePart;
+	}
+
+	void _setIntervention(Intervention intervention) {
+		this.intervention = intervention;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public SparePart getSparePart() {
+		return sparePart;
+	}
+
+	public Intervention getIntervention() {
+		return intervention;
+	}
+	
+	public double getAmount() {
+		return quantity * sparePart.getPrice();
+	}
+
+}

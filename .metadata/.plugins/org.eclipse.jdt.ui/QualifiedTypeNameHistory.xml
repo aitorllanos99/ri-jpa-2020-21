@@ -7,8 +7,14 @@
     <fullyQualifiedTypeName name="java.time.ZoneId"/>
     <fullyQualifiedTypeName name="java.time.Instant"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="alb.util.assertion.StateChecks"/>
     <fullyQualifiedTypeName name="uo.ri.cws.domain.Invoice.InvoiceStatus"/>
     <fullyQualifiedTypeName name="uo.ri.cws.domain.WorkOrder.WorkOrderStatus"/>
+    <fullyQualifiedTypeName name="uo.ri.cws.domain.base.BaseEntity"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.persistence.InheritanceType"/>
+    <fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
+    <fullyQualifiedTypeName name="javax.persistence.EnumType"/>
 </qualifiedTypeNameHistroy>

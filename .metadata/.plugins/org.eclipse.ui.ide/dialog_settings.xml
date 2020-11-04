@@ -6,8 +6,16 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p6.skeleton\cws_services"/>
 			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p5.skeleton\AlbUtil"/>
 			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p5.skeleton\cws_services"/>
 		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="710"/>
+		<item key="DIALOG_Y_ORIGIN" value="241"/>
+		<item key="DIALOG_WIDTH" value="500"/>
+		<item key="DIALOG_HEIGHT" value="419"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
 	</section>
 </section>
