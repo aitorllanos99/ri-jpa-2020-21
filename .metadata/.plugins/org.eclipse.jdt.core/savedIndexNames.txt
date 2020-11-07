@@ -6,7 +6,6 @@ INDEX VERSION 1.131+D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimes
 1174630048.index
 1733125466.index
 3419654595.index
-457997575.index
 1898139425.index
 3226803099.index
 1790625419.index

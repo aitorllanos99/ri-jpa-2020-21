@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ClientMappingTests" project="cws_services_2ndSeason" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="uo.ri.cws.persistence.entity.ClientMappingTests" time="1.398">
+    <testcase name="testRepeated" classname="uo.ri.cws.persistence.entity.ClientMappingTests" time="1.036"/>
+    <testcase name="testAllFieldsPersisted" classname="uo.ri.cws.persistence.entity.ClientMappingTests" time="0.362"/>
+  </testsuite>
+</testrun>

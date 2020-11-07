@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="VoucherMappingTests" project="cws_services_2ndSeason" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="uo.ri.cws.persistence.entity.VoucherMappingTests" time="1.539">
+    <testcase name="testRepeated" classname="uo.ri.cws.persistence.entity.VoucherMappingTests" time="1.178"/>
+    <testcase name="testAllFieldsPersisted" classname="uo.ri.cws.persistence.entity.VoucherMappingTests" time="0.361"/>
+  </testsuite>
+</testrun>

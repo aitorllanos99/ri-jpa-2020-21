@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SparePartMappingTests" project="cws_services_2ndSeason" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="uo.ri.cws.persistence.entity.SparePartMappingTests" time="1.537">
+    <testcase name="testRepeated" classname="uo.ri.cws.persistence.entity.SparePartMappingTests" time="1.16"/>
+    <testcase name="testAllFieldsPersisted" classname="uo.ri.cws.persistence.entity.SparePartMappingTests" time="0.377"/>
+  </testsuite>
+</testrun>
