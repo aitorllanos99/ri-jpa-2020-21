@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="VehicleMappingTests" project="cws_services_2ndSeason" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="uo.ri.cws.persistence.entity.VehicleMappingTests" time="1.516">
-    <testcase name="testRepeated" classname="uo.ri.cws.persistence.entity.VehicleMappingTests" time="1.146"/>
-    <testcase name="testAllFieldsPersisted" classname="uo.ri.cws.persistence.entity.VehicleMappingTests" time="0.37"/>
-  </testsuite>
-</testrun>

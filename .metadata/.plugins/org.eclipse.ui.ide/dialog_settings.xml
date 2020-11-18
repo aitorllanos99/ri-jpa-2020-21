@@ -6,6 +6,10 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.extension.ui\cws_client_cashier"/>
+			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.extension.ui\cws_client_manager"/>
+			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p7.skeleton\cws_client_manager"/>
+			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p7.skeleton\cws_services"/>
 			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p6.skeleton\cws_services"/>
 			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p5.skeleton\AlbUtil"/>
 			<item value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri.jpa.cws.2020.p5.skeleton\cws_services"/>
