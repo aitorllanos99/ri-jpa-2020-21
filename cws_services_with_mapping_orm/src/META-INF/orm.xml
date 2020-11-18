@@ -8,8 +8,100 @@
 
 	<package>uo.ri.cws.domain</package>
 	<access>FIELD</access>
-	<!-- Mapping -->
+	
+	<!-- Vehicle queries -->
+	<named-query name="Vehicle.findByPlate">
+		<query>select v from Vehicle v where v.plateNumber = ?1</query>
+	</named-query>
 
+	<!-- WorkOrder queries -->
+	<named-query name="WorkOrder.findByIds">
+		<query>select a from WorkOrder a where a.id in ?1</query>
+	</named-query>
+
+	<named-query name="WorkOrder.findByClientDni">
+		<query>select w from Client c join c.vehicles v join v.workorders w where c.dni = ?1</query>
+	</named-query>
+
+	<named-query name="WorkOrder.findByPlateNumber">
+		<query>select w from Vehicle v join v.workorders w where v.plateNumber = ?1</query>
+	</named-query>
+
+	<!-- PaymentMean queries -->
+	<named-query name="PaymentMean.findByInvoiceId">
+		<query>
+			select m 
+			from Invoice f 
+				join f.workOrders w 
+				join w.vehicle.client c 
+				join c.paymentMeans m 
+			where f.id = ?1
+		</query>
+	</named-query>
+
+	<!-- Mechanic queries -->
+	<named-query name="Mechanic.findByDni">
+		<query>
+			select m 
+			from Mechanic m 
+			where m.dni = ?1
+		</query>
+	</named-query>
+
+	<!-- Invoice queries -->
+	<named-query name="Invoice.findByNumber">
+		<query>select f from Invoice f where f.number = ?1</query>
+	</named-query>
+
+	<named-query name="Invoice.getNextInvoiceNumber">
+		<query>select max(f.number) + 1 from Invoice f</query>
+	</named-query>
+	<!-- SparePart queries -->
+	<named-query name="SparePart.findByCode">
+		<query>select s from SparePart s where s.code = ?1</query>
+	</named-query>
+
+	<named-query name="SparePart.findByDescription">
+		<query>select s from SparePart s where s.description like CONCAT('%',?1, '%')</query>
+	</named-query>
+
+	<named-query name="SparePart.findByUnderStock">
+		<query>select s from SparePart s join s.orderlines o join o.order r where s.minStock > s.stock and r.status like 'PENDING'</query>
+	</named-query>
+	<!-- Order queries -->
+	<named-query name="Order.findByCode">
+		<query>select o from Order o where o.code = ?1</query>
+	</named-query>
+
+	<named-query name="Order.findByProviderNif">
+		<query>select o from Order o join o.provider p where p.nif = ?1</query>
+	</named-query>
+
+	<!-- Provider queries -->
+	<named-query name="Provider.findByNif">
+		<query>select p from Provider p where p.nif = ?1</query>
+	</named-query>
+
+	<named-query name="Provider.findByName">
+		<query>select p from Provider p where p.name like CONCAT('%',?1, '%')</query>
+	</named-query>
+
+
+	<named-query name="Provider.findBySparePartCode">
+		<query>select p from Provider p join p.supplies s join s.sparePart t where t.code = ?1</query>
+	</named-query>
+
+
+	<!-- Supply queries -->
+	<named-query name="Supply.findByProviderNif">
+		<query>select s from Supply s join s.provider p where p.nif = ?1</query>
+	</named-query>
+
+	<named-query name="Supply.findBySparePartCode">
+		<query>select s from Supply s join s.sparePart p where p.code = ?1</query>
+	</named-query>
+	
+	<!-- Mapping -->
 
 	<mapped-superclass
 		class="uo.ri.cws.domain.base.BaseEntity">
