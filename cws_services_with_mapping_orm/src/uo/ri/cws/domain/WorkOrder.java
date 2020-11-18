@@ -114,8 +114,7 @@ public class WorkOrder extends BaseEntity {
 	 * @throws IllegalStateException if - The work order is not in ASSIGNED status
 	 */
 	public void desassign() {
-		// StateChecks.isTrue(status.equals(WorkOrderStatus.ASSIGNED), "Work order " +
-		// getId() + " is not assigned");
+		StateChecks.isTrue(status.equals(WorkOrderStatus.ASSIGNED), "Work order " + getId() + " is not assigned");
 		Associations.Assign.unlink(mechanic, this);
 		status = WorkOrderStatus.OPEN;
 	}
@@ -128,8 +127,7 @@ public class WorkOrder extends BaseEntity {
 	 * @throws IllegalStateException if - The work order is not in FINISHED status
 	 */
 	public void reopen() {
-		// StateChecks.isTrue(status.equals(WorkOrderStatus.FINISHED), "Work order " +
-		// getId() + " is not finished");
+		StateChecks.isTrue(status.equals(WorkOrderStatus.FINISHED), "Work order " + getId() + " is not finished");
 		status = WorkOrderStatus.OPEN;
 	}
 
@@ -194,6 +192,43 @@ public class WorkOrder extends BaseEntity {
 
 	public boolean isFinished() {
 		return status.equals(WorkOrderStatus.FINISHED);
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		long temp;
+		temp = Double.doubleToLongBits(amount);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((vehicle == null) ? 0 : vehicle.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		WorkOrder other = (WorkOrder) obj;
+		if (Double.doubleToLongBits(amount) != Double.doubleToLongBits(other.amount))
+			return false;
+		if (vehicle == null) {
+			if (other.vehicle != null)
+				return false;
+		} else if (!vehicle.equals(other.vehicle))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "WorkOrder [date=" + date + ", description=" + description + ", amount=" + amount + ", status=" + status
+				+ ", vehicle=" + vehicle + ", mechanic=" + mechanic + ", invoice=" + invoice + ", interventions="
+				+ interventions + "]";
 	}
 
 }

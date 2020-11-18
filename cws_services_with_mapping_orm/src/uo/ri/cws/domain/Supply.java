@@ -54,5 +54,44 @@ public class Supply extends BaseEntity {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((provider == null) ? 0 : provider.hashCode());
+		result = prime * result + ((sparePart == null) ? 0 : sparePart.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Supply other = (Supply) obj;
+		if (provider == null) {
+			if (other.provider != null)
+				return false;
+		} else if (!provider.equals(other.provider))
+			return false;
+		if (sparePart == null) {
+			if (other.sparePart != null)
+				return false;
+		} else if (!sparePart.equals(other.sparePart))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Supply [deliveryTerm=" + deliveryTerm + ", price=" + price + ", provider=" + provider + ", sparePart="
+				+ sparePart + "]";
+	}
+	
+	
 	
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="org.eclipse.jdt.ui.lastextjar" value="D:\1Escritorio\Informatica\Uni\Cuarto Curso\Primer Cuatrimestre\Repositorios de Informacion\Laboratorio\ri-jpa-2020-21\cws_services_with_mapping_orm\hibernateLib"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="1"/>
