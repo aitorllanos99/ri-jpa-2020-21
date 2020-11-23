@@ -79,7 +79,6 @@ public class JpaRepositoryFactory implements RepositoryFactory {
 
 	@Override
 	public ChargeRepository forCharge() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -5,17 +5,17 @@
     version="2.2">
 
     <persistence-unit name="carworkshop">
-      <!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>  -->  
-      <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+     <!--  <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>   --> 
         <mapping-file>META-INF/orm.xml</mapping-file>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <shared-cache-mode>NONE</shared-cache-mode>
 
 		<properties>
-		<!-- -->
+		<!-- 
 		
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-
+-->
 			<property name="eclipselink.logging.level.sql" value="FINE"/>
             <property name="eclipselink.logging.level" value="OFF" />
             <property name="eclipselink.logging.cache" value="OFF" />

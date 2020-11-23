@@ -1,6 +1,7 @@
 package uo.ri.cws.domain;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,7 +24,7 @@ public class Intervention extends BaseEntity {
 	public Intervention(Mechanic mechanic, WorkOrder workOrder) {
 		ArgumentChecks.isNotNull(mechanic);
 		ArgumentChecks.isNotNull(workOrder);
-		this.date = LocalDateTime.now();
+		this.date = LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS);
 		Associations.Intervene.link(mechanic, this, workOrder);
 	}
 
@@ -35,7 +36,7 @@ public class Intervention extends BaseEntity {
 
 	public Intervention(Mechanic mechanic, WorkOrder workOrder, LocalDateTime date, int i) {
 		this(mechanic, workOrder, i);
-		this.date = date;
+		this.date = date.truncatedTo(ChronoUnit.MILLIS);
 	}
 
 	void _setWorkOrder(WorkOrder workOrder) {

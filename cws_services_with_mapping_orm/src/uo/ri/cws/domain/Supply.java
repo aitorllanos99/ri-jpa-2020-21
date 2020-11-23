@@ -15,12 +15,14 @@ public class Supply extends BaseEntity {
 	
 	Supply() {}
 
-	public Supply(Provider p1, SparePart sp1, double deliveryTerm, int price) {
+	public Supply(Provider p1, SparePart sp1, double price, int deliveryTerm) {
 		ArgumentChecks.isNotNull(p1);
 		ArgumentChecks.isNotNull(sp1);
 		ArgumentChecks.isTrue(deliveryTerm > 0);
 		ArgumentChecks.isTrue(price >= 0);
 		Associations.Supplies.link(sp1,this,p1);
+		this.price = price;
+		this.deliveryTerm = deliveryTerm;
 	}
 
 	public int getDeliveryTerm() {

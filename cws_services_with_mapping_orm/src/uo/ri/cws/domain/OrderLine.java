@@ -2,23 +2,28 @@ package uo.ri.cws.domain;
 
 import alb.util.assertion.ArgumentChecks;
 
-
 public class OrderLine {
 	private double price;
 	private int quantity;
-	 
+
 	private SparePart sparepart;
-	private Order order;
 
 	OrderLine() {
 	}
 
 	public OrderLine(SparePart sparePart, double price) {
+		ArgumentChecks.isNotNull(sparePart);
 		ArgumentChecks.isTrue(sparePart.getStock() <= sparePart.getMinStock());
 		ArgumentChecks.isTrue(price >= 0);
 		this.sparepart = sparePart;
 		this.price = price;
 		this.quantity = sparePart.getMaxStock() - sparePart.getStock();
+	}
+
+	public OrderLine(SparePart sparePart, double price, int cantidad) {
+		this(sparePart, price);
+		ArgumentChecks.isTrue(cantidad >= 0);
+		this.quantity = cantidad;
 	}
 
 	public double getPrice() {
@@ -33,16 +38,8 @@ public class OrderLine {
 		return sparepart;
 	}
 
-	public Order getOrder() {
-		return order;
-	}
-
 	void _setSparepart(SparePart sparepart) {
 		this.sparepart = sparepart;
-	}
-
-	void _setOrder(Order order) {
-		this.order = order;
 	}
 
 	public void receive() {
@@ -58,7 +55,10 @@ public class OrderLine {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((order == null) ? 0 : order.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + quantity;
 		result = prime * result + ((sparepart == null) ? 0 : sparepart.hashCode());
 		return result;
 	}
@@ -72,10 +72,9 @@ public class OrderLine {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderLine other = (OrderLine) obj;
-		if (order == null) {
-			if (other.order != null)
-				return false;
-		} else if (!order.equals(other.order))
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
+		if (quantity != other.quantity)
 			return false;
 		if (sparepart == null) {
 			if (other.sparepart != null)
@@ -87,10 +86,7 @@ public class OrderLine {
 
 	@Override
 	public String toString() {
-		return "OrderLine [price=" + price + ", quantity=" + quantity + ", sparepart=" + sparepart + ", order=" + order
-				+ "]";
+		return "OrderLine [price=" + price + ", quantity=" + quantity + ", sparepart=" + sparepart + "]";
 	}
-	
-	
 
 }

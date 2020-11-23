@@ -41,7 +41,7 @@ public class RemoveSparePartTests {
 		int previousSize = order.getOrderLines().size();
 		double previousAmount = order.getAmount();
 
-	//	order.removeSparePart(sp2);
+		order.removeSparePart(sp2);
 
 		// no changes
 		assertEquals( previousSize, order.getOrderLines().size() );
@@ -53,7 +53,7 @@ public class RemoveSparePartTests {
 	 */
 	@Test(expected=IllegalArgumentException.class)
 	public void testRemoveNull() {
-		//order.removeSparePart( null );
+		order.removeSparePart( null );
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class RemoveSparePartTests {
 	@Test
 	public void testRemoveUnique() {
 
-	//	order.removeSparePart(sp1);
+		order.removeSparePart(sp1);
 
 		assertTrue( order.getOrderLines().isEmpty() );
 		assertEquals( 0, order.getAmount(), 0.001 );
@@ -80,7 +80,7 @@ public class RemoveSparePartTests {
 		Supply s2 = new Supply(p1, sp2, SUPPLY_PRICE, 3);
 		order.addSparePartFromSupply(s2);
 
-		//order.removeSparePart(sp1);
+		order.removeSparePart(sp1);
 
 		OrderLine expectedOrderLine = new OrderLine(sp2, s2.getPrice());
 		double expectedAmount = SUPPLY_PRICE * (MAX_STOCK - STOCK);

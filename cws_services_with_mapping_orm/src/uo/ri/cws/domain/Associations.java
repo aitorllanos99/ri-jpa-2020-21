@@ -170,21 +170,12 @@ public class Associations {
 	public static class Ordering {
 		public static void link(SparePart sparePart, OrderLine orderline, Order order) {
 			orderline._setSparepart(sparePart);
-			orderline._setOrder(order);
-
-			sparePart._getOrderLines().add(orderline);
 			order._getOrderLines().add(orderline);
 		}
 
 		public static void unlink(OrderLine orderline) {
-			SparePart sparePart = orderline.getSparePart();
-			Order order = orderline.getOrder();
-
-			sparePart._getOrderLines().remove(orderline);
-			order._getOrderLines().remove(orderline);
-
 			orderline._setSparepart(null);
-			orderline._setOrder(null);
+			
 		}
 	}
 	public static class Deliver {

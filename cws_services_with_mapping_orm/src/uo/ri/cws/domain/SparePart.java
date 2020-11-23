@@ -28,7 +28,6 @@ public class SparePart extends BaseEntity {
 	private Set<Supply> supplies = new HashSet<>();
 
 	
-	private Set<OrderLine> orderlines = new HashSet<>();
 
 	SparePart() {
 	}
@@ -89,14 +88,7 @@ public class SparePart extends BaseEntity {
 		return new HashSet<>(supplies);
 	}
 
-	Set<OrderLine> _getOrderLines() {
-		return orderlines;
-	}
-
-	public Set<OrderLine> getOrderLines() {
-		return new HashSet<>(orderlines);
-	}
-
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -179,10 +171,12 @@ public class SparePart extends BaseEntity {
 	}
 
 	public Optional<Supply> getBestSupply() {
+		if(supplies.isEmpty())
+			return Optional.ofNullable(null);
 		double lowerPrice = supplies.stream().min(Comparator.comparingDouble(dto -> dto.getPrice())).get().getPrice();
 		List<Supply> s = supplies.stream().filter(d -> d.getPrice() == lowerPrice).collect(Collectors.toList());
 		if(s.size() == 1)
-			Optional.ofNullable(s.get(0));
+			return Optional.ofNullable(s.get(0));
 		double lowerDeliveryTerm = s.stream().min(Comparator.comparingDouble(dto -> dto.getDeliveryTerm()))
 				.get().getDeliveryTerm();
 		

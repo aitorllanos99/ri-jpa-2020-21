@@ -8,7 +8,7 @@
 
 	<package>uo.ri.cws.domain</package>
 	<access>FIELD</access>
-	
+
 	<!-- Vehicle queries -->
 	<named-query name="Vehicle.findByPlate">
 		<query>select v from Vehicle v where v.plateNumber = ?1</query>
@@ -65,8 +65,9 @@
 		<query>select s from SparePart s where s.description like CONCAT('%',?1, '%')</query>
 	</named-query>
 
-	<named-query name="SparePart.findByUnderStock">
-		<query>select s from SparePart s join s.orderlines o join o.order r where s.minStock > s.stock and r.status like 'PENDING'</query>
+	<named-query name="SparePart.findByUnderStockNotPending">
+
+		<query><![CDATA[ select s from SparePart s where s.minStock > s.stock and s.code not in (select ol.sparepart.code from Order o join o.orderlines ol where o.status = uo.ri.cws.domain.Order.OrderStatus.PENDING)]]></query>
 	</named-query>
 	<!-- Order queries -->
 	<named-query name="Order.findByCode">
@@ -100,7 +101,7 @@
 	<named-query name="Supply.findBySparePartCode">
 		<query>select s from Supply s join s.sparePart p where p.code = ?1</query>
 	</named-query>
-	
+
 	<!-- Mapping -->
 
 	<mapped-superclass
@@ -181,7 +182,7 @@
 		<attributes>
 			<basic name="workOrder" optional="false" />
 			<basic name="mechanic" optional="false" />
-			<basic name="date"/>
+			<basic name="date" />
 
 			<many-to-one name="workOrder" />
 			<many-to-one name="mechanic" />
@@ -200,7 +201,7 @@
 				<column unique="true" />
 			</basic>
 
-			<basic name="date" optional="false"/>
+			<basic name="date" optional="false" />
 
 			<basic name="status">
 				<enumerated>STRING</enumerated>
@@ -253,9 +254,7 @@
 
 			<one-to-many name="substitutions" mapped-by="sparePart" />
 			<one-to-many name="supplies" mapped-by="sparePart" />
-			<element-collection name="orderlines">
-				<collection-table name="TOrderLines" />
-			</element-collection>
+
 		</attributes>
 	</entity>
 
@@ -287,7 +286,7 @@
 				<column name="brand" />
 			</basic>
 			<basic name="model" optional="false" />
-			<basic name = "client" optional = "false"/>
+			<basic name="client" optional="false" />
 
 			<many-to-one name="client" />
 			<many-to-one name="vehicleType" />
@@ -329,7 +328,7 @@
 		</table>
 
 		<attributes>
-			<basic name="date"/>
+			<basic name="date" />
 
 			<basic name="status">
 				<enumerated>STRING</enumerated>
@@ -356,9 +355,9 @@
 			</basic>
 
 			<basic name="amount" optional="false" />
-			<basic name="orderedDate"/>
-			<basic name="receptionDate"/>
-				
+			<basic name="orderedDate" />
+			<basic name="receptionDate" />
+
 			<basic name="status">
 				<enumerated>STRING</enumerated>
 			</basic>

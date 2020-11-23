@@ -1,6 +1,7 @@
 package uo.ri.cws.domain;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,7 +32,7 @@ public class WorkOrder extends BaseEntity {
 
 	public WorkOrder(Vehicle vehicle) {
 		ArgumentChecks.isNotNull(vehicle);
-		this.date = LocalDateTime.now();
+		this.date = LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS);
 		Associations.Fix.link(vehicle, this);
 	}
 

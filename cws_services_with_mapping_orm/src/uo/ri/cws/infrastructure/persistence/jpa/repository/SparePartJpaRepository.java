@@ -23,7 +23,7 @@ public class SparePartJpaRepository extends BaseJpaRepository<SparePart> impleme
 	@Override
 	public List<SparePart> findUnderStockNotPending() {
 		EntityManager em = Jpa.getManager();
-		return em.createNamedQuery("SparePart.findByUnderStock", SparePart.class)
+		return em.createNamedQuery("SparePart.findByUnderStockNotPending", SparePart.class)
 				.getResultStream().collect(Collectors.toList());
 	}
 
