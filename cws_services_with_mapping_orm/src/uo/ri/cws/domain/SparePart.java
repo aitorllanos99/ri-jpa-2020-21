@@ -153,9 +153,9 @@ public class SparePart extends BaseEntity {
 	}
 
 	public int getQuantityToOrder() {
-		if(stock > maxStock || stock == minStock)
-			return 0;
-		return maxStock - stock;
+		if(stock < minStock)
+			return maxStock - stock;
+		return 0;
 	}
 
 	public int getTotalUnitsSold() {

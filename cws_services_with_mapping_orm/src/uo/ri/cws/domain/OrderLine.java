@@ -43,8 +43,7 @@ public class OrderLine {
 	}
 
 	public void receive() {
-		sparepart.updatePriceAndStock(this.price, sparepart.getQuantityToOrder());
-
+		sparepart.updatePriceAndStock(this.price, this.quantity);
 	}
 
 	public double getAmount() {

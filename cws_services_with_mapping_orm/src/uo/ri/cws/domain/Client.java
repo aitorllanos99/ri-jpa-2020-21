@@ -6,7 +6,6 @@ import java.util.Set;
 import alb.util.assertion.ArgumentChecks;
 import uo.ri.cws.domain.base.BaseEntity;
 
-
 public class Client extends BaseEntity {
 	private String dni;
 	private String name;
@@ -70,8 +69,29 @@ public class Client extends BaseEntity {
 	public Address getAddress() {
 		return address;
 	}
+
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	@Override

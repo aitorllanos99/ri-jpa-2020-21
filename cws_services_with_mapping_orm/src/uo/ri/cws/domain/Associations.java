@@ -116,6 +116,7 @@ public class Associations {
 		public static void unlink(Intervention intervention) {
 			Mechanic mechanic = intervention.getMechanic();
 			WorkOrder workOrder = intervention.getWorkOrder();
+
 			workOrder._getInterventions().remove(intervention);
 			mechanic._getInterventions().remove(intervention);
 

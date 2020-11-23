@@ -133,7 +133,7 @@ public class WorkOrder extends BaseEntity {
 	}
 
 	private void computeAmount() {
-		amount = .0;
+		amount = 0.0;
 		for (Intervention intervencion : interventions)
 			amount += intervencion.getAmount();
 	}

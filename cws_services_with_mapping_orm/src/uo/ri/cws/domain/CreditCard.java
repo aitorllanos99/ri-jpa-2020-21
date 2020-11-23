@@ -38,6 +38,20 @@ public class CreditCard extends PaymentMean {
 	public LocalDate getValidThru() {
 		return validThru;
 	}
+	
+	
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setValidThru(LocalDate validThru) {
+		this.validThru = validThru;
+	}
 
 	@Override
 	public int hashCode() {
