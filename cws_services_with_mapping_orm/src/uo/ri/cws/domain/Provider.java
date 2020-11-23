@@ -34,7 +34,7 @@ public class Provider extends BaseEntity {
 	}
 
 	public Provider(String nif, String name, String phone, String email) {
-		this(nif);
+		this(nif, name);
 		ArgumentChecks.isNotNull(phone);
 		ArgumentChecks.isNotEmpty(phone);
 		ArgumentChecks.isNotNull(email);

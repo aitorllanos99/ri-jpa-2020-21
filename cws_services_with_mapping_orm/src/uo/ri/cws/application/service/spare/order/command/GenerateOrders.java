@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import alb.util.random.Random;
+
 //import org.apache.commons.lang3.RandomStringUtils;
 
 import uo.ri.conf.Factory;
@@ -56,8 +58,8 @@ public class GenerateOrders implements Command<List<OrderDto>> {
 	}
 
 	private String generateCode(Provider provider) {
-		return provider.getNif() + "-";
-		// + RandomStringUtils.randomAlphabetic(6);
+		return provider.getNif() + "-"
+		 + Random.string(6);
 	}
 
 }

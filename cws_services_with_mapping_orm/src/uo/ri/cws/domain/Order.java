@@ -45,7 +45,11 @@ public class Order extends BaseEntity {
 		this.receptionDate = recievedDate;
 	}
 
-
+	public Order(String code, double amount, LocalDate orderedDate, LocalDate recievedDate, Provider provider) {
+		this(code, amount, orderedDate, recievedDate);
+		ArgumentChecks.isNotNull(provider);
+		this.provider = provider;
+	}
 
 	public String getCode() {
 		return code;
@@ -134,12 +138,12 @@ public class Order extends BaseEntity {
 		return status.equals(OrderStatus.RECEIVED);
 	}
 
-
 	public void addSparePartFromSupply(Supply supply) {
 		ArgumentChecks.isTrue(supply != null, "The supply cant be null");
-		for (OrderLine ol : orderlines) 
-			StateChecks.isFalse(ol.getSparePart().getId().contentEquals(supply.getSparePart().getId()) && isPending(), "The spare is in order with different provider");
-		
+		for (OrderLine ol : orderlines)
+			StateChecks.isFalse(ol.getSparePart().getId().contentEquals(supply.getSparePart().getId()) && isPending(),
+					"The spare is in order with different provider");
+
 		boolean continuar = true;
 		// Add for a spare with stock equals to min stock
 		if (supply.getSparePart().getStock() == supply.getSparePart().getMinStock())
@@ -151,7 +155,7 @@ public class Order extends BaseEntity {
 			orderlines.add(orderLine);
 			this.amount += orderLine.getAmount();
 		}
-		
+
 		this.orderedDate = LocalDate.now();
 
 	}

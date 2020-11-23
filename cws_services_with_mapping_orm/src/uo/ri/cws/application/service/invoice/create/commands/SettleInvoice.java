@@ -17,7 +17,8 @@ public class SettleInvoice implements Command<Void> {
 
 	@Override
 	public Void execute() throws BusinessException {
-
+		
+		charges = null;
 		return null;
 	}
 
