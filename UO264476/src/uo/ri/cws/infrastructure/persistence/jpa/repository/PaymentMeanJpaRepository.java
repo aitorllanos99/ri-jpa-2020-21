@@ -12,13 +12,12 @@ public class PaymentMeanJpaRepository
 
 	@Override
 	public List<PaymentMean> findPaymentMeansByClientId(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public List<PaymentMean> findPaymentMeansByClientDni(String dni) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

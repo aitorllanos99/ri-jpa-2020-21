@@ -15,8 +15,8 @@ public class SupplyJpaRepository extends BaseJpaRepository<Supply> implements Su
 
 	@Override
 	public Optional<Supply> findByNifAndCode(String nif, String code) {
-		// TODO Auto-generated method stub
-		return null;
+		return Jpa.getManager().createNamedQuery("Supply.findByNifAndCode", Supply.class).setParameter(1, code).setParameter(2, nif)
+				.getResultStream().findFirst();
 	}
 
 	@Override

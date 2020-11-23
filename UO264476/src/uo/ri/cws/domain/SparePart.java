@@ -33,24 +33,26 @@ public class SparePart extends BaseEntity {
 	}
 
 	public SparePart(String code) {
-		ArgumentChecks.isNotEmpty(code);
+		ArgumentChecks.isNotNull(code, "the code cant be null");
+		ArgumentChecks.isNotEmpty(code, "the code cant be empty");
 		this.code = code;
 	}
 
 	public SparePart(String code, String description, double price) {
 		this(code);
-		ArgumentChecks.isNotEmpty(description);
-		ArgumentChecks.isTrue(price >= 0);
+		ArgumentChecks.isNotNull(description, "the description cant be null");
+		ArgumentChecks.isNotEmpty(description, "The description cant be empty");
+		ArgumentChecks.isTrue(price >= 0, "the price must be over 0");
 		this.description = description;
 		this.price = price;
 	}
 
 	public SparePart(String code, String description, double price, int stock, int minStock, int maxStock) {
 		this(code, description, price);
-		ArgumentChecks.isTrue(stock >= 0);
-		ArgumentChecks.isTrue(maxStock >= 0);
-		ArgumentChecks.isTrue(minStock >= 0);
-		ArgumentChecks.isTrue(maxStock >= minStock);
+		ArgumentChecks.isTrue(stock >= 0, "The stock must be over 0");
+		ArgumentChecks.isTrue(maxStock >= 0, "The max stock must be over 0");
+		ArgumentChecks.isTrue(minStock >= 0, "The min stock must be over 0");
+		ArgumentChecks.isTrue(maxStock >= minStock, "The maxStock must be higher than the minStock");
 		this.stock = stock;
 		this.maxStock = maxStock;
 		this.minStock = minStock;

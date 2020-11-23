@@ -29,8 +29,8 @@ public class OrderJpaRepository extends BaseJpaRepository<Order> implements uo.r
 
 	@Override
 	public List<Order> findBySparePartCode(String code) {
-		// TODO Auto-generated method stub
-		return null;
+		return Jpa.getManager().createNamedQuery("Order.findBySparePartCode", Order.class).setParameter(1, code).getResultStream()
+				.collect(Collectors.toList());
 	}
 
 

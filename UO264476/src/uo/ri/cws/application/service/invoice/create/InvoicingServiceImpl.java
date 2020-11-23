@@ -9,14 +9,12 @@ import uo.ri.cws.application.service.BusinessException;
 import uo.ri.cws.application.service.invoice.InvoicingService;
 import uo.ri.cws.application.service.invoice.create.commands.FindWorkOrdersByClientDni;
 import uo.ri.cws.application.service.invoice.create.commands.FindWorkOrdersByPlateNumber;
-import uo.ri.cws.application.service.invoice.create.commands.SettleInvoice;
 import uo.ri.cws.application.util.command.CommandExecutor;
 
 public class InvoicingServiceImpl implements InvoicingService {
 	private CommandExecutor executor = Factory.executor.forExecutor();
 	@Override
 	public InvoiceDto createInvoiceFor(List<String> workOrderIds) throws BusinessException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -32,19 +30,16 @@ public class InvoicingServiceImpl implements InvoicingService {
 
 	@Override
 	public Optional<InvoiceDto> findInvoiceByNumber(Long number) throws BusinessException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<PaymentMeanDto> findPayMeansByClientDni(String dni) throws BusinessException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void settleInvoice(String invoiceId, Map<String, Double> charges) throws BusinessException {
-		executor.execute(new SettleInvoice(invoiceId, charges));
 
 	}
 

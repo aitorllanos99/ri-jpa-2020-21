@@ -21,8 +21,8 @@ public class ProviderJpaRepository extends BaseJpaRepository<Provider> implement
 
 	@Override
 	public List<Provider> findByNameMailPhone(String name, String email, String phone) {
-		// TODO Auto-generated method stub
-		return null;
+		return Jpa.getManager().createNamedQuery("Provider.findByNameMailPhone", Provider.class).setParameter(1, name).setParameter(2, phone).setParameter(3, email).getResultStream()
+				.collect(Collectors.toList());
 	}
 
 	@Override
