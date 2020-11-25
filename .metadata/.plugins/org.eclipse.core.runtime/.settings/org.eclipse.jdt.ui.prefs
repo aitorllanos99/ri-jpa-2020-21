@@ -1,0 +1,13 @@
+command=C\:\\Program Files\\Java\\jdk-14.0.2\\bin\\javadoc.exe
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.time.temporal.Temporal"><rhs name\="java.time.LocalDateTime"/><rhs name\="java.time.LocalDate"/></lhs><lhs name\="java.time.temporal.TemporalAccessor"><rhs name\="java.time.LocalDateTime"/><rhs name\="java.time.LocalDate"/></lhs><lhs name\="java.time.temporal.TemporalAdjuster"><rhs name\="java.time.LocalDateTime"/><rhs name\="java.time.LocalDate"/></lhs><lhs name\="java.time.chrono.ChronoLocalDate"><rhs name\="java.time.LocalDate"/></lhs><lhs name\="java.time.chrono.ChronoLocalDateTime"><rhs name\="java.time.LocalDateTime"/></lhs><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.InheritanceType"/><rhs name\="javax.persistence.EnumType"/><rhs name\="uo.ri.cws.domain.Order$OrderStatus"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="javax.persistence.InheritanceType"/><rhs name\="javax.persistence.EnumType"/><rhs name\="uo.ri.cws.domain.Order$OrderStatus"/></lhs><lhs name\="uo.ri.cws.domain.Order$OrderStatus"><rhs name\="uo.ri.cws.domain.Order$OrderStatus"/></lhs><lhs name\="java.time.temporal.TemporalUnit"><rhs name\="java.time.temporal.ChronoUnit"/></lhs><lhs name\="uo.ri.cws.application.util.command.Command"><rhs name\="uo.ri.cws.application.service.spare.order.command.CancelOldPendingOrders"/></lhs></history>
+content_assist_number_of_computers=18
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=1
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=17
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
