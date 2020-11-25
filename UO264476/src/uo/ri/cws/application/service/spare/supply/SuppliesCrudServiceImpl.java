@@ -9,6 +9,7 @@ import uo.ri.cws.application.service.spare.SuppliesCrudService;
 import uo.ri.cws.application.service.spare.supply.crud.AddSupply;
 import uo.ri.cws.application.service.spare.supply.crud.DeleteSupply;
 import uo.ri.cws.application.service.spare.supply.crud.FindSupplyByNifAndCode;
+import uo.ri.cws.application.service.spare.supply.crud.IncrementPriceForSpareByPercent;
 import uo.ri.cws.application.service.spare.supply.crud.FindSuppliesByProviderNif;
 import uo.ri.cws.application.service.spare.supply.crud.FindSuppliesBySparePartCode;
 import uo.ri.cws.application.service.spare.supply.crud.UpdateSupply;
@@ -46,6 +47,12 @@ public class SuppliesCrudServiceImpl implements SuppliesCrudService {
 	@Override
 	public List<SupplyDto> findBySparePartCode(String code) throws BusinessException {
 		return executor.execute( new FindSuppliesBySparePartCode(code) );
+	}
+
+	@Override
+	public void incrementPriceForSpareByPercent(String code, double percentage) throws BusinessException {
+		executor.execute(new IncrementPriceForSpareByPercent(code, percentage));
+		
 	}
 
 }

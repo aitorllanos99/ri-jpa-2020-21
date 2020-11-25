@@ -93,6 +93,11 @@ public class Supply extends BaseEntity {
 		return "Supply [deliveryTerm=" + deliveryTerm + ", price=" + price + ", provider=" + provider + ", sparePart="
 				+ sparePart + "]";
 	}
+
+	
+	public void increasePriceBy(double percentage) {
+		 price = price + (price * percentage / 100.0);
+	}
 	
 	
 	

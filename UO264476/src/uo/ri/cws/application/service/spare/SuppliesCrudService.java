@@ -87,4 +87,17 @@ public interface SuppliesCrudService {
 		}
 	}
 
+	/**
+	 * For demoing purposes
+	 * 
+	 * Increments the price of all the supplies of the spare part indicated by
+	 * the code. The new price is computed as price * (1 + (percentage / 100)) 
+	 * 
+	 * @param code, of the spare part for which all the supplies are to be increased
+	 * @param percentage, to increment (or decrement if negative)
+	 * 
+	 * @throws BusinessException in case it does not exist the spare part
+	 */
+	void incrementPriceForSpareByPercent(String code, double percentage) throws BusinessException;
+
 }
